@@ -11,6 +11,7 @@ import PostCar from './components/pages/Car/PostCar';
 import UpdateCar from './components/pages/Car/UpdateCar';
 import NoMatch from './components/pages/noMatch/NoMatch';
 import Sidebar from './components/pages/header/Sidebar';
+import CarView from './components/CarView';
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,6 +46,7 @@ const App = () => {
                 <Route path="/admin-dashboard" element={<AdminDashboard setShowHamburgerMenu={setShowHamburgerMenu} />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/car" element={<PostCar />} />
+                <Route path="view" element={<CarView/>} />
                 <Route path="/car/:id" element={<UpdateCar />} />
                 <Route path="*" element={<NoMatch />} />
             </Routes>

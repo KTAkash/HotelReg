@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserDashboard = () => {
     const style={
@@ -13,7 +14,16 @@ const UserDashboard = () => {
     return (
         <div style={style}>
             <h1>User Dashboard</h1>
+            <Link to="/view">
+                <button 
+                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                    
+                >
+                    Car
+                </button>
+            </Link>
         </div>
+        
     );
 };
 
