@@ -22,6 +22,15 @@ const UserDashboard = () => {
                     Car
                 </button>
             </Link>
+
+            <Link to="/e-view">
+                <button 
+                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                    
+                >
+                    Event
+                </button>
+            </Link>
         </div>
         
     );

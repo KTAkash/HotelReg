@@ -5,8 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
-
-const Login = ({ setIsAuthenticated }) => {
+const Login = ({ setIsAuthenticated, setShowHamburgerMenu }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -22,13 +21,19 @@ const Login = ({ setIsAuthenticated }) => {
         try {
             const response = await axios.post('http://localhost:8000/ht/login', formData);
             const { userRole, token } = response.data;
-            localStorage.setItem('token', token); 
-            setIsAuthenticated(true); 
+            
+            localStorage.setItem('token', token);  // Save token in localStorage
+            localStorage.setItem('userRole', userRole);  // Save userRole in localStorage
+            
+            setIsAuthenticated(true);  // Update the auth status
             toast.success("Login successful!");
+            
             if (userRole === 'Admin') {
                 navigate('/admin-dashboard');
+                setShowHamburgerMenu(true);  // Show hamburger for Admin
             } else {
                 navigate('/user-dashboard');
+                setShowHamburgerMenu(false);  // Hide hamburger for User
             }
         } catch (error) {
             toast.error("Invalid email or password");
@@ -40,8 +45,22 @@ const Login = ({ setIsAuthenticated }) => {
         <div>
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    required 
+                />
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    value={formData.password} 
+                    onChange={handleChange} 
+                    required 
+                />
                 <button type="submit">Login</button>
             </form>
             <ToastContainer />

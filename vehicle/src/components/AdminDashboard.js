@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
     const handleCarButtonClick = () => {
-        setShowHamburgerMenu(true);
-        setCurrentMenu('Car'); // Set the current menu to Car
+        setShowHamburgerMenu(true); // Show and persist the hamburger menu
+        setCurrentMenu('Car');
     };
 
     const handleEventButtonClick = () => {
-        setShowHamburgerMenu(true);
-        setCurrentMenu('Event'); // Set the current menu to Event
+        setShowHamburgerMenu(true); // Show and persist the hamburger menu
+        setCurrentMenu('Event');
     };
 
     return (
@@ -23,7 +23,6 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
                     Car
                 </button>
             </Link>
-
             <Link to="/admin">
                 <button
                     style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
@@ -35,6 +34,5 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
         </div>
     );
 };
-
 
 export default AdminDashboard;

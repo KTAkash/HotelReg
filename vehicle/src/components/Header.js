@@ -7,6 +7,8 @@ const Header = ({ isAuthenticated, setIsAuthenticated, showHamburgerMenu, toggle
 
     const handleLogout = () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userRole');
+        localStorage.removeItem('showHamburgerMenu');
         setIsAuthenticated(false);
         navigate('/');
     };
@@ -17,21 +19,20 @@ const Header = ({ isAuthenticated, setIsAuthenticated, showHamburgerMenu, toggle
                 <Link to="/">MyApp</Link>
             </div>
             <ul className="navbar-list">
-                {!isAuthenticated && (
+                {!isAuthenticated ? (
                     <>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/signup">Signup</Link></li>
                         <li><Link to="/login">Login</Link></li>
                     </>
-                )}
-                {isAuthenticated && (
+                ) : (
                     <>
-                        <li><button onClick={handleLogout}>Logout</button></li>
+                        <li>
+                            <button onClick={handleLogout} className="logout-button">Logout</button>
+                        </li>
                         {showHamburgerMenu && (
                             <li>
-                                <button className="hamburger-button" onClick={toggleSidebar}>
-                                    ☰
-                                </button>
+                                <button className="hamburger-button" onClick={toggleSidebar}>☰</button>
                             </li>
                         )}
                     </>

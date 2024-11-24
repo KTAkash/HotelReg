@@ -1,9 +1,9 @@
+
 .sidebar {
-    position: flex;
+    position: fixed;
     top: 0;
     left: 0;
-    
-    width: 150px; /* Reduced width for a sleeker look */
+    width: 200px; /* Reduced width for a sleeker look */
     height: 100%;
     background-color: #343a40; /* Dark gray background */
     color: #fff;
