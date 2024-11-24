@@ -37,6 +37,10 @@ public class WebSecurityConfiguration {
                         .requestMatchers("/ht/**").permitAll()
                         .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/api/car").permitAll()
+
+                        .requestMatchers("/api/reserve/**").permitAll()
+
+                        .requestMatchers("/api/reservation/**").permitAll()
                         .requestMatchers("/api/car/**").permitAll()
                         .requestMatchers("/ht/admin/**").hasAnyAuthority(UserRole.Admin.name())
                         .requestMatchers("/ht/Student/**").hasAnyAuthority(UserRole.Student.name())

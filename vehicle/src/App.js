@@ -10,13 +10,17 @@ import Dashboard from './components/pages/dashboard/Dashboard';
 import PostCar from './components/pages/Car/PostCar';
 import UpdateCar from './components/pages/Car/UpdateCar';
 import NoMatch from './components/pages/noMatch/NoMatch';
-import Sidebar from './components/pages/header/Sidebar';
+import Sidebar from './components/pages/SideBar/Sidebar';
 import CarView from './components/CarView';
+import AddminDashboard from './components/Event/admindashboard/AdminDashboard';
+import PostEvents from './components/Event/events/PostEvents';
+import UpdateEvent from './components/Event/events/UpdateEvent';
 
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
-    const [showSidebar, setShowSidebar] = useState(false); // State to control sidebar visibility
+    const [showSidebar, setShowSidebar] = useState(false);
+    const [currentMenu, setCurrentMenu] = useState(null); // Track which menu is active (Car or Event)
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -35,19 +39,25 @@ const App = () => {
                 isAuthenticated={isAuthenticated} 
                 setIsAuthenticated={setIsAuthenticated} 
                 showHamburgerMenu={showHamburgerMenu}
-                toggleSidebar={toggleSidebar} // Pass the toggleSidebar function
+                toggleSidebar={toggleSidebar} 
             />
-            <Sidebar showSidebar={showSidebar} /> {/* Pass the showSidebar state to Sidebar */}
+            <Sidebar showSidebar={showSidebar} currentMenu={currentMenu} />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+                <Route 
+                    path="/admin-dashboard" 
+                    element={<AdminDashboard setShowHamburgerMenu={setShowHamburgerMenu} setCurrentMenu={setCurrentMenu} />} 
+                />
                 <Route path="/user-dashboard" element={<UserDashboard />} />
-                <Route path="/admin-dashboard" element={<AdminDashboard setShowHamburgerMenu={setShowHamburgerMenu} />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/car" element={<PostCar />} />
                 <Route path="view" element={<CarView/>} />
                 <Route path="/car/:id" element={<UpdateCar />} />
+                <Route path="/admin" element={<AddminDashboard />} />
+                <Route path="/events" element={<PostEvents />} />
+                <Route path="/event/:id" element={<UpdateEvent />} />
                 <Route path="*" element={<NoMatch />} />
             </Routes>
         </Router>

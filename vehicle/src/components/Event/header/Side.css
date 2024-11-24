@@ -1,0 +1,41 @@
+/* Sidebar container styling */
+.sidebar {
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Sidebar width */
+    position: fixed; /* Sticks to the side */
+    top: 0;
+    left: 0;
+    background-color: #343a40; /* Dark background */
+    padding: 20px 15px;
+    z-index: 1000; /* Ensures it overlays other content */
+}
+
+/* Sidebar brand styling */
+.sidebar .sidebar-brand {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+/* Sidebar navigation links */
+.sidebar .nav-link {
+    color: #fff !important; 
+    text-decoration: none !important;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-link:hover {
+    background-color: #495057;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Responsive sidebar for small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Adjust width for smaller screens */
+    }
+}
