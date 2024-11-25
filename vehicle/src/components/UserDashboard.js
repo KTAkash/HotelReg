@@ -31,6 +31,15 @@ const UserDashboard = () => {
                     Event
                 </button>
             </Link>
+
+            <Link to="/F-view">
+                <button 
+                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                    
+                >
+                    Food Menu
+                </button>
+            </Link>
         </div>
         
     );

@@ -16,7 +16,10 @@ import AddminDashboard from './components/Event/admindashboard/AdminDashboard';
 import PostEvents from './components/Event/events/PostEvents';
 import UpdateEvent from './components/Event/events/UpdateEvent';
 import EventView from './components/EventView';
-
+import AddFood from './components/Food/AddFood';
+import UpdateFood from './components/Food/updateFood';
+import ManageFood from './components/Food/ManageFood';
+import FoodView from './components/FoodView';
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
@@ -68,11 +71,15 @@ const App = () => {
                 <Route path="/car" element={<PostCar />} />
                 <Route path="/view" element={<CarView />} />
                 <Route path="/e-view" element={<EventView />} />
+                <Route path="/F-view" element={<FoodView />} />
                 <Route path="/car/:id" element={<UpdateCar />} />
                 <Route path="/admin" element={<AddminDashboard />} />
                 <Route path="/events" element={<PostEvents />} />
                 <Route path="/event/:id" element={<UpdateEvent />} />
                 <Route path="*" element={<NoMatch />} />
+                <Route path="/add" element={<AddFood />} />
+                <Route path="/update" element={<UpdateFood />} />
+                <Route path="/manage-food" element={<ManageFood />} />
             </Routes>
         </>
     );

@@ -1,11 +1,10 @@
-
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px; /* Reduced width for a sleeker look */
+    width: 200px; /* Adjust sidebar width */
     height: 100%;
-    background-color: #343a40; /* Dark gray background */
+    background-color: rgba(52, 58, 64, 0.8); /* Dark transparent background */
     color: #fff;
     overflow-y: auto; /* Allow scrolling if content exceeds height */
     transition: transform 0.3s ease-in-out; /* Smooth transition for visibility toggle */
@@ -23,7 +22,7 @@
 
 .sidebar-brand {
     font-size: 1.2rem; /* Adjusted font size for a less bulky look */
-    padding: 15px; /* Added padding for spacing */
+    padding: 10px; /* Added padding for spacing */
     color: #fff;
     text-align: center; /* Center the brand text */
     font-weight: bold;

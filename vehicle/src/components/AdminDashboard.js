@@ -12,6 +12,12 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
         setCurrentMenu('Event');
     };
 
+    
+    const handleFoodButtonClick = () => {
+        setShowHamburgerMenu(true); // Show and persist the hamburger menu
+        setCurrentMenu('Food');
+    };
+
     return (
         <div style={{ color: 'blue', backgroundColor: 'lightgrey', padding: '10px', borderRadius: '5px', textAlign: 'center' }}>
             <h1>Admin Dashboard</h1>
@@ -31,6 +37,16 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
                     Event
                 </button>
             </Link>
+            <Link to="/add">
+                <button
+                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                    onClick={handleFoodButtonClick}
+                >
+                    Food
+                </button>
+            </Link>
+
+
         </div>
     );
 };
