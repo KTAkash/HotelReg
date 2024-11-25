@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const AddminDashboard = () => {
+const EventDashboard = () => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false); // State to control modal visibility
@@ -119,4 +119,4 @@ const AddminDashboard = () => {
   );
 };
 
-export default AddminDashboard;
+export default EventDashboard;

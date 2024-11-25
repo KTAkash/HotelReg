@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Container, Row, Col} from "react-bootstrap";
-import './pages/dashboard/Dashboard.css'; 
+import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import './pages/Car-dashboard/CarDashboard.css';
 
 
 const CarView = () => {

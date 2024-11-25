@@ -47,7 +47,7 @@ const Signup = () => {
     };
 
     return (
-        <div>
+        <div className='Container'>
             <h2>Signup</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />

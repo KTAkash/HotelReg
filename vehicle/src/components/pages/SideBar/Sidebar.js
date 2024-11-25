@@ -50,6 +50,17 @@ const Sidebar = ({ showSidebar, currentMenu }) => {
         </Nav>
     );
 
+    const RoomMenu = (
+        <Nav className="flex-column mt-3">
+            <Nav.Link as={Link} to="/view-rooms" className="nav-link">
+                Room Dashboard
+            </Nav.Link>
+            <Nav.Link as={Link} to="/creat" className="nav-link">
+                Post New Room
+            </Nav.Link>
+        </Nav>
+    );
+
     return (
         <Navbar
             bg="primary"
@@ -67,6 +78,7 @@ const Sidebar = ({ showSidebar, currentMenu }) => {
                 {currentMenu === "Event" && eventMenu}
                 {currentMenu === "Food" && foodMenu}
                 {currentMenu === "Employee" && EmployeeMenu}
+                {currentMenu === "Room" && RoomMenu}
             </Container>
         </Navbar>
     );

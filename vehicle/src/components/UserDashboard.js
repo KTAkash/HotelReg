@@ -34,10 +34,26 @@ const UserDashboard = () => {
 
             <Link to="/F-view">
                 <button 
-                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
                     
                 >
                     Food Menu
+                </button>
+            </Link>
+
+            <Link to="/empview">
+                <button 
+                   
+                >
+                Employee
+                </button>
+            </Link>
+
+            
+            <Link to="/roomlist">
+                <button 
+                   
+                >
+                Rooms
                 </button>
             </Link>
         </div>

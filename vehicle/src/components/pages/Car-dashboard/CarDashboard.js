@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import './Dashboard.css'; // Ensure to include your custom styles
+import './CarDashboard.css'; // Ensure to include your custom styles
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {

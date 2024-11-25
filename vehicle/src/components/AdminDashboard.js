@@ -23,6 +23,11 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
         setCurrentMenu('Employee');
     };
 
+    const handleRoomButtonClick = () => {
+        setShowHamburgerMenu(true); // Show and persist the hamburger menu
+        setCurrentMenu('Room');
+    };
+
     return (
         <div style={{ color: 'blue', backgroundColor: 'lightgrey', padding: '10px', borderRadius: '5px', textAlign: 'center' }}>
             <h1>Admin Dashboard</h1>
@@ -56,6 +61,14 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
                     onClick={handleEmployeeButtonClick}
                 >
                     Employee
+                </button>
+            </Link>
+            <Link to="/view-rooms">
+                <button
+                    style={{ padding: '10px', backgroundColor: 'blue', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                    onClick={handleRoomButtonClick}
+                >
+                    Rooms
                 </button>
             </Link>
 
