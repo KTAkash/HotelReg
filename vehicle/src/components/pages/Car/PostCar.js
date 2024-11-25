@@ -1,8 +1,5 @@
 import "./PostCar.css";
 import { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Select from 'react-select';
 import { useNavigate } from "react-router-dom";
 
 const PostCar = () => {
@@ -28,10 +25,11 @@ const PostCar = () => {
         });
     };
 
-    const handleSelectChange = (selectedOption, actionMeta) => {
+    const handleSelectChange = (event) => {
+        const { name, value } = event.target;
         setFormData({
             ...formData,
-            [actionMeta.name]: selectedOption.value,
+            [name]: value,
         });
     };
 
@@ -74,130 +72,145 @@ const PostCar = () => {
     };
 
     const colorOptions = [
-        { value: 'red', label: 'Red' },
-        { value: 'blue', label: 'Blue' },
-        { value: 'black', label: 'Black' },
-        { value: 'green', label: 'Green' },
-        { value: 'yellow', label: 'Yellow' },
-        { value: 'purple', label: 'Purple' },
-        { value: 'orange', label: 'Orange' },
-        { value: 'pink', label: 'Pink' },
-        { value: 'brown', label: 'Brown' },
-        { value: 'gray', label: 'Gray' },
-        { value: 'white', label: 'White' },
-        { value: 'silver', label: 'Silver' },
-        { value: 'gold', label: 'Gold' },
+        'Red', 'Blue', 'Black', 'Green', 'Yellow', 'Purple', 'Orange', 'Pink', 'Brown', 'Gray', 'White', 'Silver', 'Gold'
     ];
 
-    const typeOptions = [
-        { value: 'hybrid', label: 'Hybrid' },
-        { value: 'electric', label: 'Electric' },
-        { value: 'gasoline', label: 'Gasoline' },
-        { value: 'diesel', label: 'Diesel' },
-    ];
+    const typeOptions = ['Hybrid', 'Electric', 'Gasoline', 'Diesel'];
 
-    const transmissionOptions = [
-        { value: 'auto', label: 'Automatic' },
-        { value: 'manual', label: 'Manual' },
-    ];
+    const transmissionOptions = ['Automatic', 'Manual'];
 
-    const brandOptions = [
-        { value: 'ferrari', label: 'Ferrari' },
-        { value: 'toyota', label: 'Toyota' },
-        { value: 'bmw', label: 'BMW' },
-        { value: 'audi', label: 'Audi' },
-        { value: 'mercedes', label: 'Mercedes' },
-        { value: 'volkswagen', label: 'Volkswagen' },
-        { value: 'nissan', label: 'Nissan' },
-        { value: 'chevrolet', label: 'Chevrolet' },
-    ];
+    const brandOptions = ['Ferrari', 'Toyota', 'BMW', 'Audi', 'Mercedes', 'Volkswagen', 'Nissan', 'Chevrolet'];
 
     return (
         <div className="center-form">
             <h1>New Car</h1>
-            <Form onSubmit={handleSubmit} encType="multipart/form-data">
-                <Form.Group controlId="formBasicName">
-                    <Form.Control
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
+                <div className="form-group">
+                    <label htmlFor="name"></label>
+                    <input
                         type="text"
+                        id="name"
                         name="name"
                         placeholder="Enter name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        required // Added required validation
+                        required
                     />
-                </Form.Group>
-                <Form.Group controlId="formBasicBrandName" className="select-container">
-                    <Select
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="brandname"></label>
+                    <select
                         name="brandname"
-                        options={brandOptions}
-                        placeholder="Select brand name"
+                        id="brandname"
+                        value={formData.brandname}
                         onChange={handleSelectChange}
-                        required // Added required validation
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicColor" className="select-container">
-                    <Select
+                        required
+                    >
+                        <option value="">Select Brand</option>
+                        {brandOptions.map(brand => (
+                            <option key={brand} value={brand}>{brand}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="color"></label>
+                    <select
                         name="color"
-                        options={colorOptions}
-                        placeholder="Select color"
+                        id="color"
+                        value={formData.color}
                         onChange={handleSelectChange}
-                        required // Added required validation
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicType" className="select-container">
-                    <Select
+                        required
+                    >
+                        <option value="">Select Color</option>
+                        {colorOptions.map(color => (
+                            <option key={color} value={color}>{color}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="type"></label>
+                    <select
                         name="type"
-                        options={typeOptions}
-                        placeholder="Select type"
+                        id="type"
+                        value={formData.type}
                         onChange={handleSelectChange}
-                        required // Added required validation
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicTransmission" className="select-container">
-                    <Select
+                        required
+                    >
+                        <option value="">Select Type</option>
+                        {typeOptions.map(type => (
+                            <option key={type} value={type}>{type}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="transmission"></label>
+                    <select
                         name="transmission"
-                        options={transmissionOptions}
-                        placeholder="Select transmission type"
+                        id="transmission"
+                        value={formData.transmission}
                         onChange={handleSelectChange}
-                        required // Added required validation
-                    />
-                </Form.Group>
-                <Form.Group controlId="formBasicModelYear">
-                    <Form.Control
+                        required
+                    >
+                        <option value="">Select Transmission</option>
+                        {transmissionOptions.map(transmission => (
+                            <option key={transmission} value={transmission}>{transmission}</option>
+                        ))}
+                    </select>
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="modelyear"></label>
+                    <input
                         type="number"
+                        id="modelyear"
                         name="modelyear"
-                        placeholder="Enter the Model Year"
+                        placeholder="Enter model year"
                         value={formData.modelyear}
                         onChange={handleInputChange}
-                        required // Added required validation
+                        required
                     />
-                </Form.Group>
-                <Form.Group controlId="formBasicPrice">
-                    <Form.Control
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="price"></label>
+                    <input
                         type="text"
+                        id="price"
                         name="price"
                         placeholder="Enter price"
                         value={formData.price}
                         onChange={handleInputChange}
-                        required // Added required validation
+                        required
                     />
-                </Form.Group>
-                <Form.Group controlId="formBasicDescription">
-                    <Form.Control
-                        as="textarea"
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="description"></label>
+                    <textarea
+                        id="description"
                         name="description"
                         placeholder="Enter description"
                         value={formData.description}
                         onChange={handleInputChange}
-                        required // Added required validation
+                        required
                     />
-                </Form.Group>
+                </div>
 
-                {/* Image upload */}
-                <Form.Group controlId="formBasicImage">
-                    <Form.Label>Upload Car Image</Form.Label>
-                    <Form.Control type="file" name="image" onChange={handleImageChange} accept="image/*" required /> {/* Added accept for image files */}
-                </Form.Group>
+                <div className="form-group">
+                    <label htmlFor="image"></label>
+                    <input
+                        type="file"
+                        name="image"
+                        id="image"
+                        onChange={handleImageChange}
+                        accept="image/*"
+                        required
+                    />
+                </div>
 
                 {/* Image preview */}
                 {imagePreview && (
@@ -206,8 +219,8 @@ const PostCar = () => {
                     </div>
                 )}
 
-                <Button variant="primary" type="submit" className="w-100">Submit</Button>
-            </Form>
+                <button type="submit" className="submit-btn">Submit</button>
+            </form>
         </div>
     );
 };

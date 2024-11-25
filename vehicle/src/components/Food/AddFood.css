@@ -5,7 +5,8 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  
+  background-image: url("F:\REFLS\REFLS\vehicle\src\components\images\hotel.jpg");
+
   background-size: 2500px;  
   background-position: center;  
   background-repeat: no-repeat;
@@ -13,37 +14,7 @@ body {
   
 }
 
-/* Navigation bar styles */
-.navbar {
-  background-color: #300aab;  /* Match the table header color */
-  padding: 30px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar li {
-  margin: 0 15px;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #d8f821; 
-  
-}
 
 
 h2, h3 {

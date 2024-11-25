@@ -1,86 +1,79 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import "./Sidebar.css";
+import "./Sidebar.css"; // Keep using the existing custom styles
 
 const Sidebar = ({ showSidebar, currentMenu }) => {
     const carMenu = (
-        <Nav className="flex-column mt-3">
-            <Nav.Link as={Link} to="/dashboard" className="nav-link">
+        <div className="sidebar-menu">
+            <Link to="/dashboard" className="sidebar-link">
                 Car Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="/car" className="nav-link">
+            </Link>
+            <Link to="/car" className="sidebar-link">
                 Post New Car
-            </Nav.Link>
-        </Nav>
+            </Link>
+        </div>
     );
 
     const eventMenu = (
-        <Nav className="flex-column mt-3">
-            <Nav.Link as={Link} to="/admin" className="nav-link">
+        <div className="sidebar-menu">
+            <Link to="/admin" className="sidebar-link">
                 Event Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="/events" className="nav-link">
+            </Link>
+            <Link to="/events" className="sidebar-link">
                 Post New Event
-            </Nav.Link>
-        </Nav>
+            </Link>
+        </div>
     );
 
     const foodMenu = (
-        <Nav className="flex-column mt-3">
-            <Nav.Link as={Link} to="/manage-food" className="nav-link">
+        <div className="sidebar-menu">
+            <Link to="/manage-food" className="sidebar-link">
                 Food Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="/add" className="nav-link">
+            </Link>
+            <Link to="/add" className="sidebar-link">
                 Post New Food
-            </Nav.Link>
-        </Nav>
+            </Link>
+        </div>
     );
 
-    const EmployeeMenu = (
-        <Nav className="flex-column mt-3">
-            <Nav.Link as={Link} to="/Edash" className="nav-link">
+    const employeeMenu = (
+        <div className="sidebar-menu">
+            <Link to="/Edash" className="sidebar-link">
                 Employee Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="/employee" className="nav-link">
+            </Link>
+            <Link to="/employee" className="sidebar-link">
                 Post New Employee
-            </Nav.Link>
-        </Nav>
+            </Link>
+        </div>
     );
 
-    const RoomMenu = (
-        <Nav className="flex-column mt-3">
-            <Nav.Link as={Link} to="/view-rooms" className="nav-link">
+    const roomMenu = (
+        <div className="sidebar-menu">
+            <Link to="/view-rooms" className="sidebar-link">
                 Room Dashboard
-            </Nav.Link>
-            <Nav.Link as={Link} to="/creat" className="nav-link">
+            </Link>
+            <Link to="/creat" className="sidebar-link">
                 Post New Room
-            </Nav.Link>
-        </Nav>
+            </Link>
+        </div>
     );
 
     return (
-        <Navbar
-            bg="primary"
-            variant="dark"
+        <div
             className={`sidebar ${showSidebar ? "visible" : "hidden"}`}
         >
-            <Container>
-                {/* Admin Menu at the top */}
-                <div className="sidebar-brand">
-                    <strong>Admin Menu</strong>
-                </div>
+            {/* Admin Menu at the top */}
+            <div className="sidebar-brand">
+                <strong>Admin Menu</strong>
+            </div>
 
-                {/* Dynamic Menu Rendering */}
-                {currentMenu === "Car" && carMenu}
-                {currentMenu === "Event" && eventMenu}
-                {currentMenu === "Food" && foodMenu}
-                {currentMenu === "Employee" && EmployeeMenu}
-                {currentMenu === "Room" && RoomMenu}
-            </Container>
-        </Navbar>
+            {/* Dynamic Menu Rendering */}
+            {currentMenu === "Car" && carMenu}
+            {currentMenu === "Event" && eventMenu}
+            {currentMenu === "Food" && foodMenu}
+            {currentMenu === "Employee" && employeeMenu}
+            {currentMenu === "Room" && roomMenu}
+        </div>
     );
 };
 
