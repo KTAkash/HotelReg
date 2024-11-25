@@ -39,6 +39,17 @@ const Sidebar = ({ showSidebar, currentMenu }) => {
         </Nav>
     );
 
+    const EmployeeMenu = (
+        <Nav className="flex-column mt-3">
+            <Nav.Link as={Link} to="/Edash" className="nav-link">
+                Employee Dashboard
+            </Nav.Link>
+            <Nav.Link as={Link} to="/employee" className="nav-link">
+                Post New Employee
+            </Nav.Link>
+        </Nav>
+    );
+
     return (
         <Navbar
             bg="primary"
@@ -55,6 +66,7 @@ const Sidebar = ({ showSidebar, currentMenu }) => {
                 {currentMenu === "Car" && carMenu}
                 {currentMenu === "Event" && eventMenu}
                 {currentMenu === "Food" && foodMenu}
+                {currentMenu === "Employee" && EmployeeMenu}
             </Container>
         </Navbar>
     );

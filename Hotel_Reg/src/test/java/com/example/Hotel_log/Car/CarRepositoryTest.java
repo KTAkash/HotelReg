@@ -1,4 +1,4 @@
-package com.example.Hotel_log;
+package com.example.Hotel_log.Car;
 
 import com.example.Hotel_log.Entity.Car;
 import com.example.Hotel_log.Repository.CarRepository;

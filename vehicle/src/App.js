@@ -20,6 +20,10 @@ import AddFood from './components/Food/AddFood';
 import UpdateFood from './components/Food/updateFood';
 import ManageFood from './components/Food/ManageFood';
 import FoodView from './components/FoodView';
+import EmplDashboard from './components/Employee/Employee-dashboard/EmplDashboard';
+import PostUser from './components/Employee/employee/PostUser';
+import EditEmployee from './components/Employee/employee/EditEmployee';
+
 const App = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
@@ -80,6 +84,9 @@ const App = () => {
                 <Route path="/add" element={<AddFood />} />
                 <Route path="/update" element={<UpdateFood />} />
                 <Route path="/manage-food" element={<ManageFood />} />
+                <Route path="/Edash" element={<EmplDashboard />} />
+                <Route path="/employee" element={<PostUser />} />
+                <Route path="/employee/:id" element={<EditEmployee />} />
             </Routes>
         </>
     );
