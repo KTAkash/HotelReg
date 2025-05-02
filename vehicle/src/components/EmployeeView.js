@@ -33,7 +33,7 @@ const Emplview = () => {
         <Container className="mt-5">
             <Row>
                 <Col>
-                    <h1 className="text-center">Employees</h1>
+                    <h1 className="text-center">Staffs</h1>
                     <Table striped bordered hover responsive>
                         <thead>
                             <tr>
