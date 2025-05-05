@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './style.css';
+import './Signup.css';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ const Signup = () => {
     };
 
     return (
-        <div>
+        <div className='Container'>
             <h2>Signup</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />

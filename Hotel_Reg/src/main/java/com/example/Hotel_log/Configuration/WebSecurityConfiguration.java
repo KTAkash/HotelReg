@@ -35,6 +35,13 @@ public class WebSecurityConfiguration {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Enable CORS
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/ht/**").permitAll()
+                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/car").permitAll()
+
+                        .requestMatchers("/api/reserve/**").permitAll()
+
+                        .requestMatchers("/api/reservation/**").permitAll()
+                        .requestMatchers("/api/car/**").permitAll()
                         .requestMatchers("/ht/admin/**").hasAnyAuthority(UserRole.Admin.name())
                         .requestMatchers("/ht/Student/**").hasAnyAuthority(UserRole.Student.name())
                         .requestMatchers("/ht/customer/**").permitAll()
