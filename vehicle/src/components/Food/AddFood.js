@@ -5,8 +5,6 @@ import './AddFood.css';
 
 const AddFood = () => {
 
-  
-
   const [foodName, setFoodName] = useState('');
   const [foodPrice, setFoodPrice] = useState('');
   const [foodTime, setFoodTime] = useState('Breakfast');
@@ -64,6 +62,7 @@ const AddFood = () => {
           <label>Food Name:</label>
           <input
             type="text"
+            name="name"
             value={foodName}
             onChange={(e) => setFoodName(e.target.value)}
           />
@@ -72,6 +71,7 @@ const AddFood = () => {
           <label>Food Price:</label>
           <input
             type="number"
+            name="price"
             value={foodPrice}
             onChange={(e) => setFoodPrice(e.target.value)}
           />
@@ -80,6 +80,7 @@ const AddFood = () => {
           <label>Food Time:</label>
           <select
             value={foodTime}
+            name="item"
             onChange={(e) => setFoodTime(e.target.value)}
           >
             <option value="Breakfast">Breakfast</option>

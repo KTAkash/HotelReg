@@ -61,7 +61,7 @@ const AdminDashboard = ({ setShowHamburgerMenu, setCurrentMenu }) => {
                 </button>
             </Link>
 
-            <Link to="/add">
+            <Link to="/manage-food">
                 <button
                     style={{
                         padding: '20px',
