@@ -1,48 +1,97 @@
-.center-form{
+/* UpdateCar.css - Scoped styles only for this component */
+.update-car-container {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height:125vh;
-    
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.center-form-Form{
-    max-width: 50px;
+.update-car-container h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.update-car-form {
     width: 100%;
-    padding: 20px;
-    border:1px solid #ccc;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.update-car-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.update-car-form .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.update-car-form .form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.update-car-form .select-container {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.update-car-form .select-container .react-select__control {
+    min-height: 42px;
+    border: 1px solid #ddd;
+}
+
+.update-car-form .select-container .react-select__control--is-focused {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.update-car-form .image-upload-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.update-car-form .image-preview-container {
+    margin: 1.5rem 0;
     text-align: center;
 }
-.center-form Form .form-control{
-margin-bottom: 20px;
-padding:10px;
-width:100%;
+
+.update-car-form .image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 4px;
+    border: 1px solid #eee;
 }
 
-.center-form .select-container {
-    margin-bottom: 20px;
+.update-car-form .submit-btn {
     width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.image-preview-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.update-car-form .submit-btn:hover {
+    background-color: #0069d9;
 }
 
-.image-preview {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%; /* Circular image */
-    border: 2px solid #ccc;
-}
-
-.center-form {
-    max-width: 500px;
-    margin: 0 auto
+.update-car-form .select-container .react-select__single-value {
+    color: #333; /* Ensure text is visible */
 }

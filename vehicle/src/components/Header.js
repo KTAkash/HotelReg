@@ -32,7 +32,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated, showHamburgerMenu, toggle
                         </li>
                         {showHamburgerMenu && (
                             <li>
-                                <button className="hamburger-button" onClick={toggleSidebar}>☰</button>
+                                <button className="hamburger-button" onClick={toggleSidebar} data-testid="hamburger-menu"  >☰</button>
                             </li>
                         )}
                     </>

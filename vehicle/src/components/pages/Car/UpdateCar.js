@@ -58,6 +58,7 @@ const UpdateCar = () => {
             try {
                 const response = await fetch(`http://localhost:8000/api/car/${id}`);
                 const data = await response.json();
+                console.log("Fetched data:", data);
                 setFormData({
                     brandname: data.brandname,
                     name: data.name,
@@ -129,8 +130,8 @@ const UpdateCar = () => {
     ];
 
     const transmissionOptions = [
-        { value: 'auto', label: 'Automatic' },
-        { value: 'manual', label: 'Manual' },
+        { value: 'Automatic', label: 'Automatic' },
+        { value: 'Manual', label: 'Manual' },
     ];
 
     const brandOptions = [
@@ -145,7 +146,7 @@ const UpdateCar = () => {
     ];
 
     return (
-        <div className="center-form">
+        <div className="update-car-container">
             <h1>Edit Car</h1>
             <Form onSubmit={handleSubmit} encType="multipart/form-data">
                 <Form.Group controlId="formBasicName">
@@ -160,53 +161,45 @@ const UpdateCar = () => {
                 </Form.Group>
 
                 {/* Brand Name Selection */}
-                <Form.Group controlId="formBasicBrandName" className="select-container">
-                    <Select
-                        name="brandname"
-                        options={brandOptions}
-                        placeholder="Select brand name"
-                        value={brandOptions.find(option => option.value === formData.brandname)}
-                        onChange={handleSelectChange}
-                        required
-                    />
-                </Form.Group>
+               {/* Brand Name Selection */}
+<Select
+    name="brandname"
+    options={brandOptions}
+    placeholder="Select brand name"
+    value={brandOptions.find(option => option.value.toLowerCase() === formData.brandname.toLowerCase())}
+    onChange={handleSelectChange}
+    required
+/>
 
-                {/* Color Selection */}
-                <Form.Group controlId="formBasicColor" className="select-container">
-                    <Select
-                        name="color"
-                        options={colorOptions}
-                        placeholder="Select color"
-                        value={colorOptions.find(option => option.value === formData.color)}
-                        onChange={handleSelectChange}
-                        required
-                    />
-                </Form.Group>
+{/* Color Selection */}
+<Select
+    name="color"
+    options={colorOptions}
+    placeholder="Select color"
+    value={colorOptions.find(option => option.value.toLowerCase() === formData.color.toLowerCase())}
+    onChange={handleSelectChange}
+    required
+/>
 
-                {/* Type Selection */}
-                <Form.Group controlId="formBasicType" className="select-container">
-                    <Select
-                        name="type"
-                        options={typeOptions}
-                        placeholder="Select type"
-                        value={typeOptions.find(option => option.value === formData.type)}
-                        onChange={handleSelectChange}
-                        required
-                    />
-                </Form.Group>
+{/* Type Selection */}
+<Select
+    name="type"
+    options={typeOptions}
+    placeholder="Select type"
+    value={typeOptions.find(option => option.value.toLowerCase() === formData.type.toLowerCase())}
+    onChange={handleSelectChange}
+    required
+/>
 
-                {/* Transmission Selection */}
-                <Form.Group controlId="formBasicTransmission" className="select-container">
-                    <Select
-                        name="transmission"
-                        options={transmissionOptions}
-                        placeholder="Select transmission type"
-                        value={transmissionOptions.find(option => option.value === formData.transmission)}
-                        onChange={handleSelectChange}
-                        required
-                    />
-                </Form.Group>
-
+{/* Transmission Selection */}
+<Select
+    name="transmission"
+    options={transmissionOptions}
+    placeholder="Select transmission type"
+    value={transmissionOptions.find(option => option.value.toLowerCase() === formData.transmission.toLowerCase())}
+    onChange={handleSelectChange}
+    required
+/>
                 {/* Model Year Input */}
                 <Form.Group controlId="formBasicModelYear">
                     <Form.Control
