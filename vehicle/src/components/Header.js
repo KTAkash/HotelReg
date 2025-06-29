@@ -16,7 +16,7 @@ const Header = ({ isAuthenticated, setIsAuthenticated, showHamburgerMenu, toggle
     return (
         <nav className="navbar-header">
             <div className="navbar-logo">
-                <Link to="/">MyApp</Link>
+                <Link to="/">Laa ADDams</Link>
             </div>
             <ul className="navbar-list">
                 {!isAuthenticated ? (
